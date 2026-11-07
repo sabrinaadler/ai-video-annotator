@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+
+# Editors / OS
+.DS_Store
+.vscode/
+.idea/
+
+# Local data and generated outputs
+data/
+outputs/
+
+# Model / experiment artifacts
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+
+# Logs
+*.log
+
+# Local credentials and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key

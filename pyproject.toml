@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-video-annotator"
+version = "0.1.0"
+description = "Few-shot behavioral video retrieval for AI-assisted annotation."
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+authors = [
+  { name = "Sabrina" }
+]
+dependencies = [
+  "numpy>=2.0",
+  "ijson>=3.4",
+  "PyYAML>=6.0",
+  "torch>=2.5",
+]
+
+[project.optional-dependencies]
+ml = [
+  "av>=14.0",
+  "matplotlib>=3.9",
+  "pandas>=2.2",
+  "scikit-learn>=1.5",
+  "scipy>=1.14",
+  "tqdm>=4.66",
+  "transformers>=4.50,<5",
+  "pillow>=11",
+  "open_clip_torch>=3.3,<4",
+]
+dev = [
+  "pytest>=8.3",
+  "ruff>=0.9",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.setuptools.package-data]
+"ai_video_annotator.app" = ["static/*.html", "static/*.css", "static/*.js"]

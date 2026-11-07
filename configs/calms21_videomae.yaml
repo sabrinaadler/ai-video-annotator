@@ -1,0 +1,29 @@
+dataset:
+  name: calms21
+  root: data/raw/calms21
+
+video:
+  window_seconds: 2.0
+  stride_seconds: 0.5
+  num_frames: 16
+
+encoder:
+  type: videomae
+  model_name: MCG-NJU/videomae-base
+  batch_size: 8
+  device: auto
+
+retrieval:
+  method: prototype
+  num_examples: 5
+
+postprocessing:
+  nms_iou_threshold: 0.5
+
+evaluation:
+  match_iou_thresholds:
+    - 0.3
+    - 0.5
+
+experiment:
+  seed: 42
